@@ -1,15 +1,20 @@
-# topo do arquivo
-import os, smtplib, ssl, traceback
+import os
+import smtplib, ssl
 from email.message import EmailMessage
 from flask import Flask, render_template, request, redirect, url_for, flash
+from dotenv import load_dotenv
+
+# carregar .env
+load_dotenv()
 
 app = Flask(__name__, template_folder='.')
-app.secret_key = "change-this"
+app.secret_key = os.getenv("SECRET_KEY", "change-this")
 
-SMTP_HOST = os.getenv("SMTP_HOST", "mail.privateemail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))  # SSL direto
-SMTP_USER = os.getenv("SMTP_USER", "info@paristourtravel.com")
-SMTP_PASS = os.getenv("SMTP_PASS", "paristourtravel2025")  # ideal: App Password
+# configs de e-mail
+SMTP_HOST = os.getenv("SMTP_HOST")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
+SMTP_USER = os.getenv("SMTP_USER")
+SMTP_PASS = os.getenv("SMTP_PASS")
 
 @app.route("/")
 def home():
