@@ -1,0 +1,50 @@
+# Ambiente virtual
+venv/
+ENV/
+.venv/
+
+# Configurações locais e segredos
+.env
+*.env
+*.ini
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos temporários
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.DS_Store
+Thumbs.db
+
+# Pastas de IDE/editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de build / distribuições
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testes
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Jupyter / notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Deploy (Render, Heroku, etc.)
+*.sqlite3
+instance/
